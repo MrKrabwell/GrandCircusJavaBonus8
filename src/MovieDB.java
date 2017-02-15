@@ -41,14 +41,28 @@ public class MovieDB {
         }
     }
 
-
+    /**
+     * This method sorts the ArrayList of Movies according to the title property of the Movie object
+     * @return True if executed successfully, false otherwise.  
+     */
     public boolean alphabetizeList() {
-        Collections.sort(allMovies, new Comparator<Movie>() {
-            public int compare(Movie m1, Movie m2) {
-                return m1.getTitle().compareTo(m2.getTitle());
-            }
-        });
 
+        // Do we need this try/catch??
+        try {
+            // From Stackoverflow:
+            // http://stackoverflow.com/questions/19471005/sorting-an-arraylist-of-objects-alphabetically
+            Collections.sort(allMovies, new Comparator<Movie>() {
+                public int compare(Movie m1, Movie m2) {
+                    return m1.getTitle().compareTo(m2.getTitle());
+                }
+            });
+        }
+        catch (Exception e) {
+            // Did not execute successfully
+            return false;
+        }
+
+        // If it got to here, it executed successfully
         return true;
     }
 
