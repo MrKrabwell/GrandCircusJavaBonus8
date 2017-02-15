@@ -32,7 +32,7 @@ public class Main {
 
 
         // Exit message
-        System.out.println("Goodbye!");
+        System.out.println("\nGoodbye!");
 
     }
 }

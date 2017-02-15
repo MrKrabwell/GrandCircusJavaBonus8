@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Created by yosuk on 2/14/2017.
@@ -23,9 +24,8 @@ public class MovieDB {
             ++index;
         }
 
-        // Alphabetize todo: does this work?
-        // Collections.sort;
-
+        // Alphabetize
+        alphabetizeList();
     }
 
     /**
@@ -39,6 +39,17 @@ public class MovieDB {
         else {
             return allMovies.size();
         }
+    }
+
+
+    public boolean alphabetizeList() {
+        Collections.sort(allMovies, new Comparator<Movie>() {
+            public int compare(Movie m1, Movie m2) {
+                return m1.getTitle().compareTo(m2.getTitle());
+            }
+        });
+
+        return true;
     }
 
 
